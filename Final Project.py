@@ -30,10 +30,10 @@ def make_maze(w, h):
     for (a, b) in zip(hor, ver):
         print(''.join(a + ['\n'] + b))
 
-while 1:
+while 10:
     make_maze(w, h)
     time.sleep(2)
-    x = input('Type Stop to Stop')
+    x = input('Type stop to stop')
     if x == 'stop':
         break
 print('Finished')
