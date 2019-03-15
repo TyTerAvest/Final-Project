@@ -7,7 +7,10 @@ When ever I was stuck I just checked what he was doing
 '''
 # The code below makes the maze random everytime
 from random import shuffle, randrange
-def make_maze(w = 16, h = 8):
+import time
+w = int(input('Put how wide you want the maze to be: '))
+h = int(input('Put how tall you want the maze to be: '))
+def make_maze(w, h):
     vis = [[0] * w + [1] for _ in range(h)] + [[1] * (w + 1)]
     ver = [["|  "] * w + ['|'] for _ in range(h)] + [[]]
     hor = [["+--"] * w + ['+'] for _ in range(h + 1)]
@@ -27,5 +30,10 @@ def make_maze(w = 16, h = 8):
     for (a, b) in zip(hor, ver):
         print(''.join(a + ['\n'] + b))
 
-make_maze()
+while 1:
+    make_maze(w, h)
+    time.sleep(2)
+    x = input('Type Stop to Stop')
+    if x == 'stop':
+        break
 print('Finished')
